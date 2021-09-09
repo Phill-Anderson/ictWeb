@@ -4,31 +4,29 @@ import NextLink from 'next/link'
 import Logo from 'public/images/logo.png'
 const Nav = () => {
     return (
-        <nav className="bg-white">
-            <div className="max-w-6xl mx-auto px-4">
-                <div className="flex justify-between">
-                    <div className="flex space-x-7">
-                        <div>
+        <div className="container mx-auto">
+            <nav className="py-[54px]">
+                <div className="flex max-w-screen-xl mx-auto">
+                    <div className='w-4/12'>
+                        <div className="">
                             <NextLink href="/" passHref className="flex items-center py-4 px-2">
                                 <a>
                                     <Image src={Logo} alt="Logo" className="h-8 w-8 mr-2" width="168" height='36' />
                                 </a>
                             </NextLink>
-                        </div>
-                        <div className="hidden md:flex items-center space-x-1">
-                            <ul className="flex">
-                                <li> <a href="#" className="font-semibold text-gray-500 text-lg mr-8">Нүүр.</a></li>
-                                <li> <a href="#" className="font-semibold text-gray-500 text-lg mr-8">Бидний тухай.</a></li>
-                                <li> <a href="#" className="font-semibold text-gray-500 text-lg mr-8">Компаниуд.</a></li>
-                                <li> <a href="#" className="font-semibold text-gray-500 text-lg mr-8">Холбоо барих.</a></li>
-                                <li> <a href="#" className="font-semibold text-gray-500 text-lg mr-8">EN.</a></li>
-                            </ul>
-
-                        </div>
+                        </div></div>
+                    <div className='hidden md:flex justify-end w-8/12'>
+                        <ul className="flex items-center">
+                            <li> <a href="#" className="menuItem">Нүүр.</a></li>
+                            <li> <a href="#" className="menuItem">Бидний тухай.</a></li>
+                            <li> <a href="#" className="menuItem">Компаниуд.</a></li>
+                            <li> <a href="#" className="menuItem">Холбоо барих.</a></li>
+                            <li><a href="#" className="font-normal text-gray-500 text-xl">EN</a></li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
     )
 }
 export default Nav
