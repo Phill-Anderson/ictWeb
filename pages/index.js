@@ -21,7 +21,9 @@ export default function Home() {
       <div className="bg-shape-2">
         <AboutReal />
       </div>
-      <Companies />
+      <div className="bg-shape-3">
+        <Companies />
+      </div>
       <Contact />
       <Footer />
     </div>
