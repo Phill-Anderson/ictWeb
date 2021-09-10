@@ -22,5 +22,12 @@
     background-image: url("/images/shape/1.png");
     background-repeat: no-repeat;
     background-position: top right;
+    z-index: -999;
+  }
+  .bg-shape-2 {
+    background-image: url("/images/shape/2.png");
+    background-repeat: no-repeat;
+    background-position: top left;
+    z-index: -999;
   }
 }
