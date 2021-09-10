@@ -2,7 +2,7 @@ import React from 'react'
 import Slider from './Slider'
 const Companies = () => {
     return (
-        <div className="wrapper">
+        <div className="wrapper pb-40">
             <div className="pt-60">
                 <h1 className="text-[#233D63] text-[48px] leading-[60px]">Манай Компаниуд</h1>
                 <p className="text-[#546886] text-[20px] pt-[20px]">

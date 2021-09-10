@@ -24,7 +24,9 @@ export default function Home() {
       <div className="bg-shape-3">
         <Companies />
       </div>
-      <Contact />
+      <div className="bg-shape-map">
+        <Contact />
+      </div>
       <Footer />
     </div>
   )
