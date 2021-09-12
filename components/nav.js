@@ -4,7 +4,8 @@ import NextLink from 'next/link'
 import Logo from 'public/images/logo.png'
 import RenderCompleted from 'hooks/RenderCompleted'
 import { FaBars } from 'react-icons/fa'
-const Nav = ({ sticky }) => {
+const Nav = ({ sticky, scrollFunctions }) => {
+    const { toHeader, toAboutUs, toCompanies, toContact } = scrollFunctions;
     const [showMobileMenu, setShowMobileMenu] = useState(false)
     useEffect(() => {
         document.addEventListener('keyup', function (event) {
@@ -26,11 +27,11 @@ const Nav = ({ sticky }) => {
                     </div>
                     <div className='hidden md:flex justify-end w-8/12'>
                         <ul id="menu" className="flex items-center">
-                            <li> <a href="#header-link" className="menuItem">Нүүр.</a></li>
-                            <li> <a href="#aboutUs-link" className="menuItem">Бидний тухай.</a></li>
-                            <li> <a href="#companies-link" className="menuItem">Компаниуд.</a></li>
-                            <li> <a href="#contact-link" className="menuItem">Холбоо барих.</a></li>
-                            <li><a href="#" className="font-normal text-gray-500 text-xl">EN</a></li>
+                            <li onClick={toHeader}> <a href="#header-link" className="menuItem">Нүүр.</a></li>
+                            <li onClick={toAboutUs}> <a href="#aboutUs-link" className="menuItem">Бидний тухай.</a></li>
+                            <li onClick={toCompanies}> <a href="#companies-link" className="menuItem">Компаниуд.</a></li>
+                            <li onClick={toContact}> <a href="#contact-link" className="menuItem">Холбоо барих.</a></li>
+                            <li ><a href="#" className="font-normal text-gray-500 text-xl">EN</a></li>
                         </ul>
                     </div>
                     <div className=" absolute right-10 md:hidden">
@@ -42,8 +43,7 @@ const Nav = ({ sticky }) => {
                 </div>
             </nav>
 
-            <div className={`${showMobileMenu ? 'showMobileMenu' : 'hidden'}`}>
-
+            <div className={`${showMobileMenu ? 'showMobileMenu' : 'hidden w-0 h-0'}`}>
                 <ul className="flex flex-col justify-center items-center 
                  fixed top-0 left-0 right-0 bottom-0 z-50 bg-white">
                     <span onClick={() => setShowMobileMenu(false)} className="text-black cursor-pointer absolute top-10 right-10">X</span>

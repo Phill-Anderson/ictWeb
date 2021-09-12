@@ -32,7 +32,7 @@ function useSticky() {
         }
     }, [debounce, handleScroll])
 
-    return { isSticky, element }
+    return { isSticky, setSticky, element }
 }
 
 export default useSticky
