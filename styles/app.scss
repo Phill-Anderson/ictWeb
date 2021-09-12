@@ -16,6 +16,39 @@
     @apply text-[#ff3b30];
   }
 }
+/* html {
+  scroll-behavior: smooth;
+} */
+.scrolled {
+  position: fixed;
+  background: #fff;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  box-shadow: 0px 13px 35px -12px rgb(35 35 35 / 15%);
+  animation: moveDown 0.5s ease-in-out;
+}
+.sticky-logo {
+  animation: rotate 0.7s ease-in-out;
+}
+@keyframes moveDown {
+  from {
+    transform: translateY(-5rem);
+  }
+  to {
+    transform: translateY(0rem);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotateY(360deg);
+  }
+  100% {
+    transform: rotateY(0rem);
+  }
+}
 .myShadow {
   box-shadow: 0px 13px 27px 0px rgb(163 48 53 / 25%);
 }

@@ -3,9 +3,9 @@ import NextImage from 'next/image'
 import HeaderLogo from 'public/images/header/Logo@2x.png'
 import ICTLogo from 'public/images/header/ictgroup-logo-grey.png'
 import TradeLogo from 'public/images/header/trademn-logo-grey.png'
-const Header = () => {
+const Header = ({ element }) => {
     return (
-        <div className="wrapper">
+        <div ref={element} id="header" className="wrapper page-section" data-matching-link="#header-link">
             <div className="pb-4">
                 <NextImage src={HeaderLogo} width="124" height="36" />
             </div>
@@ -48,55 +48,55 @@ const Header = () => {
             </div>
             <h1 className="myBlue text-[30px] text-center font-bold mb-10">ICTG ТОКЕНИЙ ТОВЧ МЭДЭЭЛЭЛ</h1>
             <div className="overflow-x-auto">
-                <table className="w-[100%] w-full table-auto">
+                <table className="w-full table-auto">
                     <tbody className="text-[#57667E] text-[17px] font-bold">
                         <tr className=" border border-gray-300 hover:bg-gray-100">
                             <td className="py-2 px-10 border-r border-gray-300">ТОКЕН НЭР:</td>
-                            <td className="px-2 px-4 text-right">ICT SECURITY TOKEN</td>
+                            <td className="py-2 px-4 text-right">ICT SECURITY TOKEN</td>
                         </tr>
                         <tr className=" border border-gray-300 hover:bg-gray-100">
                             <td className="py-2 px-10 border-r border-gray-300">ТОКЕНИЙ ТИККЕР:</td>
-                            <td className="px-2 px-4 text-right">ICTG</td>
+                            <td className="py-2 px-4 text-right">ICTG</td>
                         </tr>
                         <tr className=" border border-gray-300 hover:bg-gray-100">
                             <td className="py-2 px-10 border-r border-gray-300">ҮРГЭЛЖЛЭХ ХУГАЦАА:</td>
-                            <td className="px-2 px-4 text-right">2021/05/24 11:00 - 2021/05/31 16:00</td>
+                            <td className="py-2 px-4 text-right">2021/05/24 11:00 - 2021/05/31 16:00</td>
                         </tr>
                         <tr className=" border border-gray-300 hover:bg-gray-100">
                             <td className="py-2 px-10 border-r border-gray-300">ТОКЕНИЙ ХЭЛБЭР:</td>
-                            <td className="px-2 px-4 text-right">SECURITY TOKEN</td>
+                            <td className="py-2 px-4 text-right">SECURITY TOKEN</td>
                         </tr>
                         <tr className=" border border-gray-300 hover:bg-gray-100">
                             <td className="py-2 px-10 border-r border-gray-300">ТОКЕНИЙ СТАНДАРТ:</td>
-                            <td className="px-2 px-4 text-right">ETHEREUM ERC777</td>
+                            <td className="py-2 px-4 text-right">ETHEREUM ERC777</td>
                         </tr>
                         <tr className=" border border-gray-300 hover:bg-gray-100">
                             <td className="py-2 px-10 border-r border-gray-300">НИЙТ ТОКЕНИЙ ТОО ХЭМЖЭЭ:</td>
-                            <td className="px-2 px-4 text-right">1,428,600,000</td>
+                            <td className="py-2 px-4 text-right">1,428,600,000</td>
                         </tr>
                         <tr className=" border border-gray-300 hover:bg-gray-100">
                             <td className="py-2 px-10 border-r border-gray-300">ХӨРӨНГӨ ОРУУЛАГЧДАД САНАЛ БОЛГОХ ХУВЬ:</td>
-                            <td className="px-2 px-4 text-right">10%</td>
+                            <td className="py-2 px-4 text-right">10%</td>
                         </tr>
                         <tr className=" border border-gray-300 hover:bg-gray-100">
                             <td className="py-2 px-10 border-r border-gray-300">ХӨРӨНГӨ ОРУУЛАГЧДАД САНАЛ БОЛГОХ ТОО ХЭМЖЭЭ:</td>
-                            <td className="px-2 px-4 text-right">124,793,954</td>
+                            <td className="py-2 px-4 text-right">124,793,954</td>
                         </tr>
                         <tr className=" border border-gray-300 hover:bg-gray-100">
                             <td className="py-2 px-10 border-r border-gray-300">ТОКЕНИЙ НЭГЖ ҮНЭ:</td>
-                            <td className="px-2 px-4 text-right">130 ТӨГРӨГ</td>
+                            <td className="py-2 px-4 text-right">130 ТӨГРӨГ</td>
                         </tr>
                         <tr className=" border border-gray-300 hover:bg-gray-100">
                             <td className="py-2 px-10 border-r border-gray-300">АРИЛЖААЛАХ БИРЖ:</td>
-                            <td className="px-2 px-4 text-right">WWW.TRADE.MN</td>
+                            <td className="py-2 px-4 text-right">WWW.TRADE.MN</td>
                         </tr>
                         <tr className=" border border-gray-300 hover:bg-gray-100">
                             <td className="py-2 px-10 border-r border-gray-300">ОЛБОРЛОЛТ:</td>
-                            <td className="px-2 px-4 text-right">ОЛБОРЛОХ БОЛОМЖГҮЙ</td>
+                            <td className="py-2 px-4 text-right">ОЛБОРЛОХ БОЛОМЖГҮЙ</td>
                         </tr>
                         <tr className=" border border-gray-300 hover:bg-gray-100">
                             <td className="py-2 px-10 border-r border-gray-300">СМАРТ КОНТРАКТ АУДИТ:</td>
-                            <td className="px-2 px-4 text-right"> CERTIK LLC</td>
+                            <td className="py-2 px-4 text-right"> CERTIK LLC</td>
                         </tr>
                     </tbody>
                 </table>

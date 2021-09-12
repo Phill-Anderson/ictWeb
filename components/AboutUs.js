@@ -4,7 +4,7 @@ import AboutUsImage from 'public/images/shape/hero.png'
 import { FaAngleRight } from 'react-icons/fa';
 const AboutUs = () => {
     return (
-        <div className="wrapper relative pb-40">
+        <div id="aboutUs" className="page-section wrapper relative pb-40" data-matching-link="#aboutUs-link">
             <div style={{ zIndex: 99 }}>
                 <div className="mt-20 mb-1 px-6 w-[380px] bg-[#FBFBFF] border border-[#E9E9E9] rounded">
                     <p className="text-[15px] text-[#677180] font-medium leading-8">
