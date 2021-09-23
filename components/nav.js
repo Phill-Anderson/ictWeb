@@ -2,10 +2,10 @@ import React, { useEffect, useState, useRef } from 'react'
 import Image from 'next/image'
 import NextLink from 'next/link'
 import Logo from 'public/images/logo.png'
-import RenderCompleted from 'hooks/RenderCompleted'
 import { FaBars } from 'react-icons/fa'
-const Nav = ({ sticky, scrollFunctions }) => {
+const Nav = ({ sticky, setSticky, scrollFunctions, isActiveLinks }) => {
     const { toHeader, toAboutUs, toCompanies, toContact } = scrollFunctions;
+    const { activeAboutLink, activeHeaderLink, activeContactLink, activeCompaniesLink } = isActiveLinks;
     const [showMobileMenu, setShowMobileMenu] = useState(false)
     useEffect(() => {
         document.addEventListener('keyup', function (event) {
@@ -27,10 +27,10 @@ const Nav = ({ sticky, scrollFunctions }) => {
                     </div>
                     <div className='hidden md:flex justify-end w-8/12'>
                         <ul id="menu" className="flex items-center">
-                            <li onClick={toHeader}> <a href="#header-link" className="menuItem">Нүүр.</a></li>
-                            <li onClick={toAboutUs}> <a href="#aboutUs-link" className="menuItem">Бидний тухай.</a></li>
-                            <li onClick={toCompanies}> <a href="#companies-link" className="menuItem">Компаниуд.</a></li>
-                            <li onClick={toContact}> <a href="#contact-link" className="menuItem">Холбоо барих.</a></li>
+                            <li onClick={toHeader}> <a href="#header-link" className={`menuItem `}>Нүүр.</a></li>
+                            <li onClick={toAboutUs}> <a href="#aboutUs-link" className={`menuItem `}>Бидний тухай.</a></li>
+                            <li onClick={toCompanies}> <a href="#companies-link" className={`menuItem `}>Компаниуд.</a></li>
+                            <li onClick={toContact}> <a href="#contact-link" className={`menuItem `}>Холбоо барих.</a></li>
                             <li ><a href="#" className="font-normal text-gray-500 text-xl">EN</a></li>
                         </ul>
                     </div>
@@ -57,3 +57,4 @@ const Nav = ({ sticky, scrollFunctions }) => {
     )
 }
 export default Nav
+

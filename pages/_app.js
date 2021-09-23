@@ -1,11 +1,9 @@
 import 'tailwindcss/tailwind.css'
-import 'styles/app.scss'
+import 'styles/app.css'
+import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 
-
-
 function MyApp({ Component, pageProps }) {
-
   return (
     <>
       <Head>
@@ -19,6 +17,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" type="image/png" sizes="56x32" href="/images/favi.png" />
       </Head>
       <Component {...pageProps} />
+
     </>
   )
 }

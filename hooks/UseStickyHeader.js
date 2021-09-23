@@ -2,10 +2,25 @@ import { useEffect, useState, useRef } from "react"
 
 function useSticky() {
     const [isSticky, setSticky] = useState(false)
-    const element = useRef(null)
 
+    const [activeHeaderLink, setActiveHeaderLink] = useState(false)
+    const [activeAboutLink, setActiveAboutLink] = useState(false)
+    const [activeCompaniesLink, setActiveCompaniesLink] = useState(false)
+    const [activeContactLink, setActiveContactLink] = useState(false)
+
+    const headerEl = useRef(null);
+    const aboutUsEl = useRef(null);
+    const companiesEl = useRef(null);
+    const contactEl = useRef(null);
+
+    const handleScrollActiveLink = () => {
+        window.scrollY > 0 || window.scrollY < (headerEl.current.offsetBottom) ? setActiveHeaderLink(true) : setActiveHeaderLink(false)
+        window.scrollY > (aboutUsEl.current.offsetTop) || window.scrollY < (aboutUsEl.current.offsetBottom) ? setActiveAboutLink(true) : setActiveAboutLink(false)
+        window.scrollY > (companiesEl.current.offsetTop) && window.scrollY < (companiesEl.current.offsetBottom) ? setActiveCompaniesLink(true) : setActiveCompaniesLink(false)
+        window.scrollY > (contactEl.current.offsetTop) && window.scrollY < (contactEl.current.offsetBottom) ? setActiveContactLink(true) : setActiveContactLink(false)
+    }
     const handleScroll = () => {
-        window.scrollY > element.current.getBoundingClientRect().bottom ? setSticky(true) : setSticky(false)
+        window.scrollY > (headerEl.current.offsetTop + 250) ? setSticky(true) : setSticky(false)
     }
 
     // This function handles the scroll performance issue
@@ -32,7 +47,14 @@ function useSticky() {
         }
     }, [debounce, handleScroll])
 
-    return { isSticky, setSticky, element }
+    useEffect(() => {
+        window.addEventListener("scroll", handleScrollActiveLink)
+        return () => {
+            window.removeEventListener("scroll", () => handleScrollActiveLink)
+        }
+    }, [handleScroll])
+
+    return { isSticky, setSticky, headerEl, aboutUsEl, companiesEl, contactEl, activeAboutLink, activeHeaderLink, activeCompaniesLink, activeContactLink }
 }
 
 export default useSticky
